@@ -1,0 +1,15 @@
+import java.io.*;
+import java.util.*;
+
+public class FileReader {
+	
+	public static void main (String args[]) throws FileNotFoundException{
+		Scanner input = new Scanner (new File("./resources/tempData.txt"));
+		while (input.hasNext()){
+			double d1 = input.nextDouble();
+			//double d2 = input.nextDouble();
+			System.out.println("" + (input.nextDouble()-d1));
+			
+		}
+	}
+}

@@ -1,7 +1,0 @@
-
-public class Client {
-	public static void main (String args[]){
-		AdvanceTicket mine = new AdvanceTicket(1, 100);
-		System.out.println(mine.toString());
-	}
-}
