@@ -4,6 +4,7 @@ package textExcel;
 
 public class SpreadsheetLocation implements Location
 {
+	private String locationValue = "";
     @Override
     public int getRow()
     {
@@ -20,7 +21,7 @@ public class SpreadsheetLocation implements Location
     
     public SpreadsheetLocation(String cellName)
     {
-        // TODO: Fill this out with your own code
+    		locationValue = cellName;
     }
 
 }
