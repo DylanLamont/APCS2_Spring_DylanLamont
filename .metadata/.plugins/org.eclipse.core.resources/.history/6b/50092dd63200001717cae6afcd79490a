@@ -18,7 +18,7 @@ public class Spreadsheet implements Grid
 	public String processCommand(String command)
 	{
 		// TODO Auto-generated method stub
-		return command;
+		return null;
 	}
 
 	@Override
@@ -43,9 +43,7 @@ public class Spreadsheet implements Grid
 	@Override
 	public String getGridText()
 	{
-		String grid = "";
-		//for loop to run the top row, tab then letter, increment char, 9 spaces, before each char put |
-		//Then move to next line put incrementing int, then run spaces loop (method)? nested for loop
+		// TODO Auto-generated method stub
 		return null;
 	}
 

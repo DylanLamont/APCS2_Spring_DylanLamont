@@ -16,6 +16,7 @@ public class TextExcel
 	    Scanner input = new Scanner(System.in);
 	    String command = input.next();
 	    while (!command.equalsIgnoreCase("quit")){
+	    	sprdsheet.processCommand(command);
 	    	System.out.println(sprdsheet.processCommand(command));
 	    	command = input.next();
 	    }
