@@ -1,6 +1,6 @@
 package textExcel;
 
-public class EmptyCell implements Cell {
+public class TextCell implements Cell {
 
 	@Override
 	public String abbreviatedCellText() {

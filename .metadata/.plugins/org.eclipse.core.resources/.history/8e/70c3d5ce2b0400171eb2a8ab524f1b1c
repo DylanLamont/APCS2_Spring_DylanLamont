@@ -17,14 +17,7 @@ public class Spreadsheet implements Grid
 	@Override
 	public String processCommand(String command)
 	{
-		String[] commandBreakdown = command.split(" ");
-		if (commandBreakdown[1].equals("=")){
-			String location = commandBreakdown[0];
-			SpreadsheetLocation cellLocation = new SpreadsheetLocation(location);
-			int rowNum = cellLocation.getRow();
-			int columnNum = cellLocation.getCol();
-			
-		}
+		// TODO Auto-generated method stub
 		return command;
 	}
 
@@ -54,16 +47,16 @@ public class Spreadsheet implements Grid
 		grid += "   |";
 		char columnLet = 'A';
 		for(int i = 0; i < 12; i++){
-			grid += ((char)(columnLet)) + "         |";
+			grid += ((char)(columnLet)) + "         "+ "|";
 			columnLet += 1;
 		}
 		grid += "\n";
 		
 		for (int i = 0; i < 20; i++){
-			if(i<9){
-				grid += (i+1) + "  |";
+			if(i<10){
+				grid += i + "  |";
 			} else {
-				grid += (i+1) + " |";
+				grid += i + " |";
 			}
 			for(int j = 0; j<12 ; j++){
 				grid += spreadsheetArr[i][j].abbreviatedCellText() + "|";
