@@ -23,7 +23,11 @@ public class Spreadsheet implements Grid
 			SpreadsheetLocation cellLocation = new SpreadsheetLocation(location);
 			int rowNum = cellLocation.getRow();
 			int columnNum = cellLocation.getCol();
-			
+			if (commandBreakdown[2].substring(commandBreakdown[2].length()-1).equals("%")){
+				spreadsheetArr[rowNum][columnNum] = new PercentCell(commandBreakdown[2]);
+			} else if(commandBreakdown[2].charAt(0) == '"'){
+				spreadsheetArr[rowNum][columnNum] = new TextCell(commandBreakdown[2]);
+			}
 		}
 		return command;
 	}
