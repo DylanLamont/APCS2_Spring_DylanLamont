@@ -5,20 +5,19 @@ public class TextCell implements Cell {
 	private String cellContents;
 	
 	public TextCell (String contents){
-		cellContents = contents.substring(1, contents.length()-1); 
+		cellContents = contents; 
 	}
 	@Override
 	public String abbreviatedCellText() {
-		String returnStr = "";
+		String returnStr = cellContents;
 		int cellValueLength = cellContents.length();
 		if (cellContents.length() < 10){
-			while (cellContents.length() + returnStr.length() != 10){
+			while (returnStr.length() < 10){
 				returnStr += " ";
 			}
-			returnStr +=  cellContents;
-			return null;
+			return returnStr;
 		} else if (cellContents.length() > 10){
-			returnStr += cellContents.substring(0, 11);
+			returnStr = returnStr.substring(0, 10);
 			return returnStr;
 		}else{
 			return cellContents;
@@ -27,7 +26,7 @@ public class TextCell implements Cell {
 
 	@Override
 	public String fullCellText() {
-		return cellContents;
+		return "\"" + cellContents + "\"";
 	}
 
 }

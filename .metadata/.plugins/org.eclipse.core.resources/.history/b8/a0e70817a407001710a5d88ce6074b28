@@ -1,0 +1,33 @@
+package textExcel;
+
+public class ValueCell implements Cell {
+	private double value;
+	
+	@Override
+	public String abbreviatedCellText() {
+		String returnStr = "" + value;
+		int cellValueLength = returnStr.length();
+		if (returnStr.length() < 10){
+			while (returnStr.length() < 10){
+				returnStr += " ";
+			}
+			return returnStr;
+		} else if (returnStr.length() > 10){
+			returnStr = returnStr.substring(0, 10);
+			return returnStr;
+		}else{
+			return returnStr;
+		}
+	}
+
+	@Override
+	public String fullCellText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public ValueCell (String enteredVal){
+		value = Double.parseDouble(enteredVal);
+	}
+
+}

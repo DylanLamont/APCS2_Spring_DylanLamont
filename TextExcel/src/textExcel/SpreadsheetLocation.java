@@ -4,18 +4,23 @@ package textExcel;
 
 public class SpreadsheetLocation implements Location
 {
-	private String locationValue = "";
+	private String locationValue;
     @Override
     public int getRow()
     {
-        int rowNum = Integer.parseInt(locationValue.substring(1)) - 1;
-        return rowNum;
+        int rowNum = (Integer.parseInt(locationValue.substring(1)));
+        return rowNum -1;
     }
 
     @Override
     public int getCol()
     {
-        int colNum = locationValue.charAt(0) - 65;
+    	int colNum;
+    	if (locationValue.charAt(0)>90){
+    		colNum = locationValue.charAt(0) - 97;
+    	}else{
+            colNum = locationValue.charAt(0) - 65;
+    	}
         return colNum;
     }
     

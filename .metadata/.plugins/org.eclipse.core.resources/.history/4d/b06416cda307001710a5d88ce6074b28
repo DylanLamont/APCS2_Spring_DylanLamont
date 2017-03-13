@@ -1,0 +1,22 @@
+package textExcel;
+
+public class ValueCell implements Cell {
+	private double value;
+	
+	@Override
+	public String abbreviatedCellText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String fullCellText() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public ValueCell (String enteredVal){
+		value = Double.parseDouble(enteredVal);
+	}
+
+}
