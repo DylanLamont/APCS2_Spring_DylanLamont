@@ -1,6 +1,6 @@
 package textExcel;
 
-public class FormulaCell extends RealCell{
+public abstract class RealCell implements Cell {
 
 	@Override
 	public String abbreviatedCellText() {
@@ -10,11 +10,8 @@ public class FormulaCell extends RealCell{
 
 	@Override
 	public String fullCellText() {
-		return super.fullCellText();
-	}
-	
-	public FormulaCell (String enteredForm){
-		super(enteredForm);
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

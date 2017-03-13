@@ -1,21 +1,23 @@
 package textExcel;
 
-public class PercentCell extends RealCell {
+public class PercentCell implements Cell {
+	private String value;
+	
 	
 	@Override
 	public String abbreviatedCellText() {
 		// TODO Auto-generated method stub
-		return super.abbreviatedCellText();
+		return null;
 	}
 
 	@Override
 	public String fullCellText() {
 		// TODO Auto-generated method stub
-		return super.fullCellText();
+		return null;
 	}
 	
 	public PercentCell(String initialValue){
-		super(initialValue);
+		value = initialValue;
 	}
 
 }

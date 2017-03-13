@@ -1,0 +1,33 @@
+package textExcel;
+
+public abstract class RealCell implements Cell {
+
+	private String value;
+	
+	@Override
+	public String abbreviatedCellText() {
+		String returnStr = value;
+		if (returnStr.length() < 10){
+			while (returnStr.length() < 10){
+				returnStr += " ";
+			}
+			return returnStr;
+		} else if (returnStr.length() > 10){
+			returnStr = returnStr.substring(0, 10);
+			return returnStr;
+		}else{
+			return returnStr;
+		}
+
+	}
+
+	@Override
+	public String fullCellText() {
+		return value;
+	}
+	
+	public RealCell (String enteredVal){
+		value = enteredVal;
+	}
+
+}

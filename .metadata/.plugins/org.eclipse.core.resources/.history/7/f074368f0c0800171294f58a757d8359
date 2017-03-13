@@ -5,7 +5,7 @@ public class PercentCell extends RealCell {
 	@Override
 	public String abbreviatedCellText() {
 		// TODO Auto-generated method stub
-		return super.abbreviatedCellText();
+		return super.abbreviatedCellText().substring(0, super.abbreviatedCellText().length()-1) + "%";
 	}
 
 	@Override
