@@ -4,9 +4,6 @@ public abstract class RealCell implements Cell {
 
 	private String value;
 	
-	public RealCell (String enteredVal){
-		value = enteredVal;
-	}
 	@Override
 	public String abbreviatedCellText() {
 		String returnStr = value;
@@ -29,9 +26,8 @@ public abstract class RealCell implements Cell {
 		return value;
 	}
 	
-	
-	public double getDoubleValue(){
-		return Double.parseDouble(value);
+	public RealCell (String enteredVal){
+		value = enteredVal;
 	}
 
 }

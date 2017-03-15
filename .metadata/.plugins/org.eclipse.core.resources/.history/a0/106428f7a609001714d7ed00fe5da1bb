@@ -18,9 +18,5 @@ public class ValueCell extends RealCell {
 		super (enteredVal);
 		valueDoub = Double.parseDouble(super.fullCellText());		
 	}
-	
-	public double getDoubleValue(){
-		return valueDoub;
-	}
 
 }

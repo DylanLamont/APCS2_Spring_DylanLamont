@@ -17,9 +17,5 @@ public class PercentCell extends RealCell {
 	public PercentCell(String initialValue){
 		super(initialValue);
 	}
-	
-	public double getDoubleValue(){
-		return Double.parseDouble(fullCellText().substring(0, fullCellText().length()-1));
-	}
 
 }

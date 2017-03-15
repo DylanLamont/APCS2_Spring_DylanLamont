@@ -14,7 +14,7 @@ public class TextExcel
 	{
 	    Spreadsheet sprdsheet = new Spreadsheet();
 	    
-	//    System.out.println(sprdsheet.getGridText());
+//	    System.out.println(sprdsheet.getGridText());
 	    Scanner input = new Scanner(System.in);
 	    String command = input.nextLine();
 	    while (!command.equalsIgnoreCase("quit")){
