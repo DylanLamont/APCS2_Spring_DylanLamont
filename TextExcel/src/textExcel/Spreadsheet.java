@@ -31,10 +31,10 @@ public class Spreadsheet implements Grid
 						spreadsheetArr[rowNum][columnNum] = new PercentCell(commandBreakdown[2]);
 					} else if(commandBreakdown[2].charAt(0) == '"' && commandBreakdown[2].charAt(commandBreakdown[2].length()-1) == '"'){
 						spreadsheetArr[rowNum][columnNum] = new TextCell(commandBreakdown[2].substring(1, commandBreakdown[2].length()-1));
-					} else if (commandBreakdown[2].indexOf(".") > 0){
-						spreadsheetArr[rowNum][columnNum] = new ValueCell(commandBreakdown[2]);
 					}else if (commandBreakdown[2].charAt(0) == '(' && commandBreakdown[2].charAt(commandBreakdown[2].length()-1) == ')'){
 						spreadsheetArr[rowNum][columnNum] = new FormulaCell(commandBreakdown[2]);
+					} else {
+						spreadsheetArr[rowNum][columnNum] = new ValueCell(commandBreakdown[2]);
 					}
 					return (getGridText());
 				} else if (commandBreakdown[0].equalsIgnoreCase("clear")){

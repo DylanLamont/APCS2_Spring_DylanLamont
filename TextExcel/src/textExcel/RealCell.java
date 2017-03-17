@@ -9,7 +9,8 @@ public abstract class RealCell implements Cell {
 	}
 	@Override
 	public String abbreviatedCellText() {
-		String returnStr = value;
+		String returnStr = getDoubleValue() + "";
+		//String returnStr = value;
 		if (returnStr.length() < 10){
 			while (returnStr.length() < 10){
 				returnStr += " ";
