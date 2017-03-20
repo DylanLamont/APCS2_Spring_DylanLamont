@@ -1,5 +1,6 @@
 package textExcel;
-
+import java.util.*;
+import java.io.*;
 // Update this file with your own code.
 
 public class Spreadsheet implements Grid
@@ -33,7 +34,7 @@ public class Spreadsheet implements Grid
 						spreadsheetArr[rowNum][columnNum] = new TextCell(commandBreakdown[2].substring(1, commandBreakdown[2].length()-1));
 					}else if (commandBreakdown[2].charAt(0) == '(' && commandBreakdown[2].charAt(commandBreakdown[2].length()-1) == ')'){
 						spreadsheetArr[rowNum][columnNum] = new FormulaCell(commandBreakdown[2]);
-					} else {
+					}else {
 						spreadsheetArr[rowNum][columnNum] = new ValueCell(commandBreakdown[2]);
 					}
 					return (getGridText());
@@ -41,6 +42,10 @@ public class Spreadsheet implements Grid
 					SpreadsheetLocation cellLocation = new SpreadsheetLocation(commandBreakdown[1]);
 					spreadsheetArr[cellLocation.getRow()][cellLocation.getCol()] = new EmptyCell();
 					return (getGridText());
+				}else if(commandBreakdown[0].equalsIgnoreCase("save")){
+					saveFile(commandBreakdown[1]);
+				}else if(commandBreakdown[0].equalsIgnoreCase("open")){
+					return openFile(commandBreakdown[1]);
 				}
 			}
 		}else if (command.equalsIgnoreCase("clear")){
@@ -77,6 +82,59 @@ public class Spreadsheet implements Grid
 		return spreadsheetArr[loc.getRow()][loc.getCol()];
 	}
 
+	
+	private String saveFile (String filename){ 
+		PrintWriter outputFile;
+		try {
+				outputFile = new PrintWriter(new File(filename));
+		}
+		catch (FileNotFoundException e) {
+			return "File not found: " + filename;
+		}
+		for( int i = 0; i < spreadsheetArr.length; i++){
+			for (int j = 0; j<spreadsheetArr[i].length; j++){
+				if (!(spreadsheetArr[i][j] instanceof EmptyCell)){
+					char column = ((char) (j + 65));
+					outputFile.print((column));
+					outputFile.println((i + 1) +  "," + spreadsheetArr[i][j].getType() + "," + spreadsheetArr[i][j].fullCellText());
+				}
+			}
+		}
+		outputFile.close();
+		return "";
+		}
+	
+	private String openFile(String filename){
+		Scanner inputFile;
+		try {
+			inputFile = new Scanner(new File("./" + filename));
+			}
+		catch (FileNotFoundException e) {
+			return "File not found: " + filename;
+		}
+		while (inputFile.hasNext()){
+			String[] fileInputBreakdown = inputFile.nextLine().split("," , 3);
+			SpreadsheetLocation cellLocation = new SpreadsheetLocation(fileInputBreakdown[0]);
+			int rowNum = cellLocation.getRow();
+			int columnNum = cellLocation.getCol();
+			if (fileInputBreakdown[1].equalsIgnoreCase("PercentCell")){
+				spreadsheetArr[rowNum][columnNum] = new PercentCell((Double.parseDouble(fileInputBreakdown[2]) *100) + "");
+			} else if(fileInputBreakdown[1].equalsIgnoreCase("TextCell")){
+				spreadsheetArr[rowNum][columnNum] = new TextCell(fileInputBreakdown[2].substring(1, fileInputBreakdown[2].length()-1));
+			}else if (fileInputBreakdown[1].equalsIgnoreCase("FormulaCell")){
+				spreadsheetArr[rowNum][columnNum] = new FormulaCell(fileInputBreakdown[2]);
+			}else {
+				spreadsheetArr[rowNum][columnNum] = new ValueCell(fileInputBreakdown[2]);
+			}
+//			return (getGridText());	
+		}
+		inputFile.close();
+		return (getGridText());	
+		}
+
+	
+	
+	
 	@Override
 	public String getGridText()
 	{

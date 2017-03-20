@@ -11,7 +11,7 @@ public class ValueCell extends RealCell {
 	@Override
 	public String fullCellText() {
 		// TODO Auto-generated method stub
-		return valueDoub + "";
+		return super.fullCellText();
 	}
 	
 	public ValueCell (String enteredVal){
@@ -21,6 +21,9 @@ public class ValueCell extends RealCell {
 	
 	public double getDoubleValue(){
 		return valueDoub;
+	}
+	public String getType(){
+		return "ValueCell";
 	}
 
 }

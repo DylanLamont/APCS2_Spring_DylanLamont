@@ -4,8 +4,8 @@ public class FormulaCell extends RealCell{
 
 	@Override
 	public String abbreviatedCellText() {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return fullCellText().substring(0,10);
 	}
 
 	@Override
@@ -17,4 +17,7 @@ public class FormulaCell extends RealCell{
 		super(enteredForm);
 	}
 
+	public String getType(){
+		return "FormulaCell";
+	}
 }
