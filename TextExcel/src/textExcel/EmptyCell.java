@@ -4,17 +4,15 @@ public class EmptyCell implements Cell {
 
 	@Override
 	public String abbreviatedCellText() {
-		// TODO Auto-generated method stub
-		return "          ";
+		return "          ";		//return ten spaced string
 	}
 
 	@Override
 	public String fullCellText() {
-		// TODO Auto-generated method stub
-		return "";
+		return "";					//return empty value of a cell
 	}
 	public String getType(){
-		return "EmptyCell";
+		return "EmptyCell";			//implemented method from interface, although never used, placed for certainty
 	}
 
 }

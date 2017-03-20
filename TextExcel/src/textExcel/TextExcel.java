@@ -1,3 +1,11 @@
+/*
+ * Dylan Lamont
+ * Period 2
+ * Text Excel project
+ * March 19th, 2017
+ */
+
+
 package textExcel;
 import java.util.*;
 import java.io.*;
@@ -5,21 +13,19 @@ import java.io.*;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-// Update this file with your own code.
 
 public class TextExcel
 {
 
 	public static void main(String[] args)
 	{
-	    Spreadsheet sprdsheet = new Spreadsheet();
+	    Spreadsheet sprdsheet = new Spreadsheet();			// creating new instance of spreadsheet
 	    
-	//  System.out.println(sprdsheet.getGridText());
-	    Scanner input = new Scanner(System.in);
-	    String command = input.nextLine();
+	    Scanner input = new Scanner(System.in);				//setting up scanner to read console
+	    String command = input.nextLine();					// fenceposting for while loop
 	    while (!command.equalsIgnoreCase("quit")){
-	    	System.out.println(sprdsheet.processCommand(command));
-	    	command = input.nextLine();
+	    	System.out.println(sprdsheet.processCommand(command));			//printing processed command entered
+	    	command = input.nextLine();										//fence posting to read next command
 	    }
 	}
 }
