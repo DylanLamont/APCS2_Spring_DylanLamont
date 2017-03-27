@@ -333,7 +333,7 @@
       <tags>categoryTag:Help</tags>
     </sharedElements>
     <sharedElements xsi:type="advanced:Area" xmi:id="_spIaQA0wEeeR28NC0VsZgw" elementId="org.eclipse.ui.editorss" selectedElement="_spIaQQ0wEeeR28NC0VsZgw">
-      <children xsi:type="basic:PartStack" xmi:id="_spIaQQ0wEeeR28NC0VsZgw" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_spIaTg0wEeeR28NC0VsZgw">
+      <children xsi:type="basic:PartStack" xmi:id="_spIaQQ0wEeeR28NC0VsZgw" elementId="org.eclipse.e4.primaryDataStack" selectedElement="_spIaXg0wEeeR28NC0VsZgw">
         <tags>org.eclipse.e4.primaryDataStack</tags>
         <tags>EditorStack</tags>
         <children xsi:type="basic:Part" xmi:id="_spIaQg0wEeeR28NC0VsZgw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="RealCell.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
@@ -359,7 +359,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_spIaRg0wEeeR28NC0VsZgw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Spreadsheet.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Spreadsheet.java&quot; partName=&quot;Spreadsheet.java&quot; title=&quot;Spreadsheet.java&quot; tooltip=&quot;TextExcel/src/textExcel/Spreadsheet.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/Spreadsheet.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;4815&quot; selectionTopPixel=&quot;1239&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;Spreadsheet.java&quot; partName=&quot;Spreadsheet.java&quot; title=&quot;Spreadsheet.java&quot; tooltip=&quot;TextExcel/src/textExcel/Spreadsheet.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/Spreadsheet.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;727&quot; selectionTopPixel=&quot;315&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -403,7 +403,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_spIaTg0wEeeR28NC0VsZgw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="TextExcel.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;TextExcel.java&quot; partName=&quot;TextExcel.java&quot; title=&quot;TextExcel.java&quot; tooltip=&quot;TextExcel/src/textExcel/TextExcel.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/TextExcel.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;219&quot; selectionTopPixel=&quot;0&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;TextExcel.java&quot; partName=&quot;TextExcel.java&quot; title=&quot;TextExcel.java&quot; tooltip=&quot;TextExcel/src/textExcel/TextExcel.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/TextExcel.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;81&quot; selectionTopPixel=&quot;54&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -491,7 +491,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_spIaXg0wEeeR28NC0VsZgw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="FormulaCell.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FormulaCell.java&quot; partName=&quot;FormulaCell.java&quot; title=&quot;FormulaCell.java&quot; tooltip=&quot;TextExcel/src/textExcel/FormulaCell.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/FormulaCell.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;867&quot; selectionTopPixel=&quot;115&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;FormulaCell.java&quot; partName=&quot;FormulaCell.java&quot; title=&quot;FormulaCell.java&quot; tooltip=&quot;TextExcel/src/textExcel/FormulaCell.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/FormulaCell.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;316&quot; selectionTopPixel=&quot;45&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -579,7 +579,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_spIabg0wEeeR28NC0VsZgw" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="TestsALL.java" iconURI="platform:/plugin/org.eclipse.jdt.ui/icons/full/obj16/jcu_obj.png" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;TestsALL.java&quot; partName=&quot;TestsALL.java&quot; title=&quot;TestsALL.java&quot; tooltip=&quot;TextExcel/src/textExcel/TestsALL.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/TestsALL.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;23373&quot; selectionTopPixel=&quot;7614&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.jdt.ui.CompilationUnitEditor&quot; name=&quot;TestsALL.java&quot; partName=&quot;TestsALL.java&quot; title=&quot;TestsALL.java&quot; tooltip=&quot;TextExcel/src/textExcel/TestsALL.java&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/TextExcel/src/textExcel/TestsALL.java&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;23134&quot; selectionTopPixel=&quot;7614&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.jdt.ui.CompilationUnitEditor</tags>
           <tags>removeOnHide</tags>
@@ -944,7 +944,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_spJBjg0wEeeR28NC0VsZgw" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_rXgWsBCrEeesuLx-HrhqeA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_sq-zrg0wEeeR28NC0VsZgw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-L85txMHEeeFvcbz0k_Fyw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_sq-zrg0wEeeR28NC0VsZgw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_spJBmw0wEeeR28NC0VsZgw" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -971,7 +971,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_sqBxcA0wEeeR28NC0VsZgw" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_rXzRoxCrEeesuLx-HrhqeA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_sq-OXA0wEeeR28NC0VsZgw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_-MGquRMHEeeFvcbz0k_Fyw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_sq-OXA0wEeeR28NC0VsZgw"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_sqBxew0wEeeR28NC0VsZgw" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
