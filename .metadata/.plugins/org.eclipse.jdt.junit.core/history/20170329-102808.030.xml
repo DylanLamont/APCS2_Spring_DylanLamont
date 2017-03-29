@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="B_Checkpoint1" project="TextExcel" tests="8" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="textExcel.TestsALL.B_Checkpoint1" incomplete="true">
+    <testcase name="testMixed" classname="textExcel.TestsALL.B_Checkpoint1" incomplete="true"/>
+    <testcase name="testSimpleMixedWithOrWithoutPrecedence" classname="textExcel.TestsALL.B_Checkpoint1" incomplete="true"/>
+    <testcase name="testMultiplicative" classname="textExcel.TestsALL.B_Checkpoint1" incomplete="true"/>
+    <testcase name="testAdditive" classname="textExcel.TestsALL.B_Checkpoint1" incomplete="true"/>
+    <testcase name="testAdditiveWithNegatives" classname="textExcel.TestsALL.B_Checkpoint1" incomplete="true"/>
+    <testcase name="testMixedWithOrWithoutPrecedence" classname="textExcel.TestsALL.B_Checkpoint1" incomplete="true"/>
+    <testcase name="testConstant" classname="textExcel.TestsALL.B_Checkpoint1" incomplete="true"/>
+    <testcase name="testMultiplicativeWithNegative" classname="textExcel.TestsALL.B_Checkpoint1" incomplete="true"/>
+  </testsuite>
+</testrun>

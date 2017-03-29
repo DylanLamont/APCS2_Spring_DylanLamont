@@ -3,7 +3,7 @@ import java.util.*;
 
 public class FormulaCell extends RealCell{
 
-	private String cellText;
+	private String cellText = "";
 	@Override
 	public String abbreviatedCellText() {
 		String abbCellText = getDoubleValue() +"";
@@ -27,11 +27,7 @@ public class FormulaCell extends RealCell{
 	
 	public FormulaCell (String enteredForm){
 		super(enteredForm);							//constructor to fill super's String field (accesses by fullCellText)
-		for (int i = 0; i < this.fullCellText().length(); i++){
-			if (!(fullCellText().charAt(i) == ' ')){
-				cellText += fullCellText().charAt(i);
-			}
-		}
+		cellText = fullCellText().substring(2, fullCellText().length()-2);
 	}
 
 	public String getType(){
@@ -43,25 +39,23 @@ public class FormulaCell extends RealCell{
 		ArrayList<Double> operands = new ArrayList<Double>();
 		ArrayList<String> locations = new ArrayList<String>();
 		for (int i = 0; i < cellText.length(); i++){
-			if (cellText.charAt(i) != '+' ||cellText.charAt(i) != '-'||cellText.charAt(i) != '*' ||cellText.charAt(i) != '/'){
+			if ((cellText.charAt(i) == '+' ||(cellText.charAt(i) == '-' && cellText.charAt(i+1) == ' ')||cellText.charAt(i) == '*' ||cellText.charAt(i) == '/')){
 				operators.add(cellText.charAt(i) + "");
-			}else if ((cellText.charAt(i) >= 65 && cellText.charAt(i) <= 90) || (cellText.charAt(i) >= 97 && cellText.charAt(i) <= 122)){
-				if ((Integer.parseInt(cellText.charAt(i +1) + "") > 2)){
-					locations.add(cellText.substring(i, i + 2));
-				}else if (cellText.charAt(i + 2) != '+' ||cellText.charAt(i + 2) != '-'||cellText.charAt(i + 2) != '*' ||cellText.charAt(i + 2) != '/'){
-					locations.add(cellText.substring(i, i + 2));
-				}else{
-					locations.add(cellText.substring(i, i + 3));
+			} 
+			else if (cellText.charAt(i) == ' ');
+			else {
+				
+				String value = cellText.substring(i);
+				if (value.indexOf(" ") == -1){
+				}else {
+					value = value.substring(0, value.indexOf(' '));
+					i = value.indexOf(' ');
 				}
-			}else {
-				String numberVal = cellText.charAt(i) + "";
-				int lengthOfNum = 0;
-				while (!(cellText.charAt(i + lengthOfNum) != '+' ||cellText.charAt(i + lengthOfNum) != '-'||cellText.charAt(i + lengthOfNum) != '*' ||cellText.charAt(i + lengthOfNum) != '/')){
-					numberVal = cellText.substring(i + lengthOfNum);
-					lengthOfNum++;
-				}
-				operands.add(Double.parseDouble(numberVal));
+				operands.add(Double.parseDouble(value));
 			}
+		}
+		for (int i = 0; i < operands.size(); i++){
+			System.out.println(operands.get(i));
 		}
 		double returnVal = operands.get(0);
 		for (int i = 0; i < operators.size(); i++){
