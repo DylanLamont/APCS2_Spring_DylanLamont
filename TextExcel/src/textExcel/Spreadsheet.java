@@ -32,7 +32,7 @@ public class Spreadsheet implements Grid
 					} else if(commandBreakdown[2].charAt(0) == '"' && commandBreakdown[2].charAt(commandBreakdown[2].length()-1) == '"'){		//test to see if assignment for textcell
 						spreadsheetArr[rowNum][columnNum] = new TextCell(commandBreakdown[2].substring(1, commandBreakdown[2].length()-1));
 					}else if (commandBreakdown[2].charAt(0) == '(' && commandBreakdown[2].charAt(commandBreakdown[2].length()-1) == ')'){		//test to see if assignment for formula cell
-						spreadsheetArr[rowNum][columnNum] = new FormulaCell(commandBreakdown[2]);
+						spreadsheetArr[rowNum][columnNum] = new FormulaCell(commandBreakdown[2], spreadsheetArr);
 					}else {
 						spreadsheetArr[rowNum][columnNum] = new ValueCell(commandBreakdown[2]);		//last option if failed all others leads to value cell
 					}
@@ -121,7 +121,7 @@ public class Spreadsheet implements Grid
 			} else if(fileInputBreakdown[1].equalsIgnoreCase("TextCell")){			//test to see if type is text cell
 				spreadsheetArr[rowNum][columnNum] = new TextCell(fileInputBreakdown[2].substring(1, fileInputBreakdown[2].length()-1));
 			}else if (fileInputBreakdown[1].equalsIgnoreCase("FormulaCell")){			//test to see if type is formula cell
-				spreadsheetArr[rowNum][columnNum] = new FormulaCell(fileInputBreakdown[2]);
+				spreadsheetArr[rowNum][columnNum] = new FormulaCell(fileInputBreakdown[2], spreadsheetArr);
 			}else {									//can assume type is value cell, as per the instruction, files will have same csv format
 				spreadsheetArr[rowNum][columnNum] = new ValueCell(fileInputBreakdown[2]);
 			}

@@ -32,4 +32,7 @@ public class TextCell implements Cell {
 	public String getType(){
 		return "TextCell";								//returns type of cell
 	}
+	public double getDoubleValue(){						//capability to add in range of an average call or sum without error
+		return 0.0;
+	}
 }
