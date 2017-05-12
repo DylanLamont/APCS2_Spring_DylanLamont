@@ -12,7 +12,7 @@ import java.awt.event.KeyAdapter;
 public class Demo {
 	public static void main (String[] args){
 		Xyz object = new Xyz();
-		//Time keeping system,  possible word games
+		
 	}
 
 }

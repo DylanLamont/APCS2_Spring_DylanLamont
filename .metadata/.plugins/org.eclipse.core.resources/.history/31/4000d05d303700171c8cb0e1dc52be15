@@ -12,14 +12,12 @@ import java.awt.event.KeyAdapter;
 public class Demo {
 	public static void main (String[] args){
 		Xyz object = new Xyz();
-		//Time keeping system,  possible word games
+		
 	}
 
 }
 
 class Xyz extends JFrame{
-	String word = "";
-	
 	public Xyz(){
 		addMouseListener(new MouseAdapter(){
 			public void mousePressed(MouseEvent e){
@@ -30,12 +28,10 @@ class Xyz extends JFrame{
 		});
 		addKeyListener( new KeyAdapter(){
 			public void keyPressed(KeyEvent e){
-				word += e.getKeyChar();
 				System.out.println(e.getKeyChar());
 				if (e.getKeyCode() == KeyEvent.VK_SPACE){
-					System.out.println(word);
-				}if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE){
-					word = "";
+					System.out.println("Space Pressed");
+					System.out.println(e.getKeyChar());
 				}
 			}
 		});
