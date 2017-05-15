@@ -1,6 +1,6 @@
 //package newSwingDemoPackage;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -8,6 +8,10 @@ import java.awt.event.*;
 import java.awt.event.KeyListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyAdapter;
+import java.util.Date;
+import java.util.*;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
 
 public class Demo {
 	public static void main (String[] args){
@@ -19,8 +23,15 @@ public class Demo {
 
 class Xyz extends JFrame{
 	String word = "";
+	ArrayList<String> wordList = new ArrayList<String>();
+	JPanel panel = new JPanel();
+	JTextArea text = new JTextArea(1,15);
 	
 	public Xyz(){
+		wordList.add("worldly"); wordList.add("classroom"); wordList.add("programming"); wordList.add("desk"); wordList.add("intellegent");wordList.add("board"); wordList.add("computer"); wordList.add("shoe"); wordList.add("book");
+
+		text.setText(wordList.get((int)(Math.random()*wordList.size())));
+		
 		addMouseListener(new MouseAdapter(){
 			public void mousePressed(MouseEvent e){
 				int x = e.getX();
@@ -36,6 +47,9 @@ class Xyz extends JFrame{
 					System.out.println(word);
 				}if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE){
 					word = "";
+				}if (e.getKeyChar() == 't'){
+					Date d = new Date();
+					System.out.println(d.getTime());
 				}
 			}
 		});
@@ -43,5 +57,7 @@ class Xyz extends JFrame{
 		setVisible(true);
 		setSize(400,400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel.add(text);
+		add(panel);
 	}
 }
