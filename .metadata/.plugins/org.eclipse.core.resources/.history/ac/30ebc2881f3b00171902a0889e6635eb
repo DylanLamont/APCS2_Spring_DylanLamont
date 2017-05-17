@@ -25,19 +25,12 @@ class Xyz extends JFrame{
 	String word = "";
 	ArrayList<String> wordList = new ArrayList<String>();
 	JPanel panel = new JPanel();
-	JTextArea text = new JTextArea();
-	JTextArea playerText = new JTextArea();
-	String playerWord = "";
+	JTextArea text = new JTextArea(1,15);
 	
 	public Xyz(){
 		wordList.add("worldly"); wordList.add("classroom"); wordList.add("programming"); wordList.add("desk"); wordList.add("intellegent");wordList.add("board"); wordList.add("computer"); wordList.add("shoe"); wordList.add("book");
 
-		word =wordList.get((int)(Math.random()*wordList.size()));
-		
-		text = new JTextArea(1,word.length());
-		
-		playerText =new JTextArea(1,word.length());
-		
+		text.setText(wordList.get((int)(Math.random()*wordList.size())));
 		
 		addMouseListener(new MouseAdapter(){
 			public void mousePressed(MouseEvent e){
@@ -48,32 +41,17 @@ class Xyz extends JFrame{
 		});
 		addKeyListener( new KeyAdapter(){
 			public void keyPressed(KeyEvent e){
-				boolean isNotCorrect = true;
-			//	while (isNotCorrect){
-					
-					text.setText(word);
-					playerText.setText("");
-					char newLetter = e.getKeyChar();
-					if(newLetter == e.VK_BACK_SPACE && playerWord.length()>0){
-						playerWord = playerWord.substring(0, playerWord.length());
-					}else if (newLetter == e.VK_BACK_SPACE && playerWord.length() ==0){
-						playerWord = "";
-					}else{
-						playerWord += newLetter;
-						//System.out.println(playerWord);
-					}
-					playerText.setText(playerWord);
-					
-					if (playerWord.equalsIgnoreCase(word)){
-						text.setText("You won!");
-						isNotCorrect = false;
-					}
+				word += e.getKeyChar();
+				System.out.println(e.getKeyChar());
+				if (e.getKeyCode() == KeyEvent.VK_SPACE){
+					System.out.println(word);
+				}if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE){
+					word = "";
+				}if (e.getKeyChar() == 't'){
+					Date d = new Date();
+					System.out.println(d.getTime());
 				}
-//				if (e.getKeyChar() == 't'){
-//					Date d = new Date();
-//					System.out.println(d.getTime());
-//				}
-			
+			}
 		});
 		setLayout(new FlowLayout());
 		setVisible(true);

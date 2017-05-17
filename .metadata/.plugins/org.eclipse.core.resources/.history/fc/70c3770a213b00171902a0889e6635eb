@@ -37,8 +37,6 @@ class Xyz extends JFrame{
 		text = new JTextArea(1,word.length());
 		
 		playerText =new JTextArea(1,word.length());
-		
-		
 		addMouseListener(new MouseAdapter(){
 			public void mousePressed(MouseEvent e){
 				int x = e.getX();
@@ -48,32 +46,27 @@ class Xyz extends JFrame{
 		});
 		addKeyListener( new KeyAdapter(){
 			public void keyPressed(KeyEvent e){
-				boolean isNotCorrect = true;
-			//	while (isNotCorrect){
-					
-					text.setText(word);
-					playerText.setText("");
-					char newLetter = e.getKeyChar();
-					if(newLetter == e.VK_BACK_SPACE && playerWord.length()>0){
-						playerWord = playerWord.substring(0, playerWord.length());
-					}else if (newLetter == e.VK_BACK_SPACE && playerWord.length() ==0){
-						playerWord = "";
-					}else{
-						playerWord += newLetter;
-						//System.out.println(playerWord);
-					}
-					playerText.setText(playerWord);
-					
-					if (playerWord.equalsIgnoreCase(word)){
-						text.setText("You won!");
-						isNotCorrect = false;
-					}
+				
+				text.setText(word);
+				char newLetter = e.getKeyChar();
+				if(newLetter == e.VK_BACK_SPACE && playerWord.length()>0){
+					playerWord = playerWord.substring(0, playerWord.length());
+				}else if (newLetter == e.VK_BACK_SPACE && playerWord.length() ==0){
+					playerWord = "";
+				}else{
+					playerWord += newLetter;
+					System.out.println(playerWord);
+				}
+				playerText.setText(playerWord);
+				
+				if (playerWord.equalsIgnoreCase(word)){
+					text.setText("You won!");
 				}
 //				if (e.getKeyChar() == 't'){
 //					Date d = new Date();
 //					System.out.println(d.getTime());
 //				}
-			
+			}
 		});
 		setLayout(new FlowLayout());
 		setVisible(true);

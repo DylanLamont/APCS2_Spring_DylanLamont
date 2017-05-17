@@ -73,7 +73,7 @@ class Xyz extends JFrame{
 //					Date d = new Date();
 //					System.out.println(d.getTime());
 //				}
-			
+			//}
 		});
 		setLayout(new FlowLayout());
 		setVisible(true);
