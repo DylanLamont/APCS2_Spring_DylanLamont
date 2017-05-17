@@ -49,9 +49,10 @@ class Xyz extends JFrame{
 			public void mousePressed(MouseEvent e){
 				Graphics graphic = getGraphics();
 				drawRect(graphic);
-				if ((e.getX() > rx && e.getX() < rx + width) && (e.getY() > ry && e.getY() < ry + height)){
+				if ((e.getX() > rx && e.getX() < width)&&(e.getY() > ry && e.getY() < height)){
 					graphic.dispose();
 					counter++;
+					drawRect(graphic);
 				}
 				System.out.println(counter);
 			}
@@ -76,10 +77,10 @@ class Xyz extends JFrame{
 		
 	}
 	public void drawRect(Graphics g){
-		 rx = ((int)(Math.random() * 400));
-		 ry = ((int)(Math.random() * 400));
-		 height = ((int)(Math.random() * 30));
-		 width = ((int)(Math.random() * 30));
-		 g.fillRect(rx,ry, width, height);
+		int rx = ((int)(Math.random() * 400));
+		int ry = ((int)(Math.random() * 400));
+		int height = ((int)(Math.random() * 30));
+		int width = ((int)(Math.random() * 30));
+		g.fillRect(rx,ry, width, height);
 	}
 }

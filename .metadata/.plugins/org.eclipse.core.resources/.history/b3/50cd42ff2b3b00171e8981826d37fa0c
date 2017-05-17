@@ -32,11 +32,6 @@ public class Demo {
 class Xyz extends JFrame{
 	
 	JPanel panel  = new JPanel();
-	int rx;
-	int ry;
-	int height;
-	int width;
-	int counter = 0;
 	
 	public Xyz(){
 		panel.setLocation(0, 0);
@@ -48,12 +43,10 @@ class Xyz extends JFrame{
 			
 			public void mousePressed(MouseEvent e){
 				Graphics graphic = getGraphics();
-				drawRect(graphic);
-				if ((e.getX() > rx && e.getX() < rx + width) && (e.getY() > ry && e.getY() < ry + height)){
-					graphic.dispose();
-					counter++;
-				}
-				System.out.println(counter);
+				graphic.drawRect(((int)(Math.random() * 400)), ((int)(Math.random() * 400)), ((int)(Math.random() * 400)), ((int)(Math.random() * 400)));
+				int x = e.getX();
+				int y = e.getY();
+				System.out.println(x + " , " + y);
 			}
 		});
 		addKeyListener( new KeyAdapter(){
@@ -66,20 +59,11 @@ class Xyz extends JFrame{
 				}
 			}
 		});
-		
-		
 
 		setLayout(new FlowLayout());
 		setVisible(true);
 		setSize(400,400);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-	}
-	public void drawRect(Graphics g){
-		 rx = ((int)(Math.random() * 400));
-		 ry = ((int)(Math.random() * 400));
-		 height = ((int)(Math.random() * 30));
-		 width = ((int)(Math.random() * 30));
-		 g.fillRect(rx,ry, width, height);
 	}
 }

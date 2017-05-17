@@ -80,6 +80,6 @@ class Xyz extends JFrame{
 		 ry = ((int)(Math.random() * 400));
 		 height = ((int)(Math.random() * 30));
 		 width = ((int)(Math.random() * 30));
-		 g.fillRect(rx,ry, width, height);
+		g.fillRect(rx,ry, width, height);
 	}
 }
