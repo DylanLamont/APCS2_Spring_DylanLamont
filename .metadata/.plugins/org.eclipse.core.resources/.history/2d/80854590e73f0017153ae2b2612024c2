@@ -23,10 +23,10 @@ public class Demo {
 		System.out.println("To play, run the prgram and click in the window created");
 		System.out.println("try to click inside the newest rectangle with in 3 seconds");
 		System.out.println("To save you artwork, press 's'");
-		System.out.println("To create beautiful artwork, press 'a', but Micheal Chang is a dumb");
 		Xyz object = new Xyz();
 		//Time keeping system,  possible word games
 	}
+
 }
 
 class Xyz extends JFrame{
@@ -101,8 +101,8 @@ class Xyz extends JFrame{
 	}
 	public void artFunction(Graphics g){
 		g.setColor(new Color(((int)(Math.random()*256)),((int)(Math.random()*256)),((int)(Math.random()*256))));
-		rx = ((int)(Math.random() * 360));
-		ry = ((int)(Math.random() * 360));
+		rx = ((int)(Math.random() * 350));
+		ry = ((int)(Math.random() * 350));
 		height = ((int)(Math.random() * 30)) + 10;
 		width = ((int)(Math.random() * 30)) + 10;
 		g.fillRect(rx,ry, width, height);
