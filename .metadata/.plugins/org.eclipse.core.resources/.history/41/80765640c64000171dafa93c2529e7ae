@@ -41,7 +41,6 @@ class Xyz extends JFrame{
 	int y;
 	Date time;
 	long endTime = new Date().getTime();
-	int imageCounter = 0;
 	
 	public Xyz(){		
 		addMouseListener(new MouseAdapter(){
@@ -98,19 +97,14 @@ class Xyz extends JFrame{
 	public void saveFile(){
 		try
         {
-//            BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
-//            Graphics2D graphics2D = image.createGraphics();
-//            panel.paint(graphics2D);
-
-			Container c= getContentPane();
-			BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
-			c.paint(image.getGraphics());
-			ImageIO.write(image,"jpeg", new File("./artwork/image" + imageCounter + ".jpeg"));
-            imageCounter++;
+            BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
+            Graphics2D graphics2D = image.createGraphics();
+            panel.paint(graphics2D);
+            ImageIO.write(image,"jpeg", new File("/home/deniz/Desktop/jmemPractice.jpeg"));
         }
         catch(Exception exception)
         {
-            System.out.println("\n-\n-\n-Something went wrong!\n-\n-");
+            //code
         }
 		
 	}

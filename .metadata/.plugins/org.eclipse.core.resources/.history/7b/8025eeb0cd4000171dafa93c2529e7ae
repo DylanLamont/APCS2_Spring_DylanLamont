@@ -102,9 +102,15 @@ class Xyz extends JFrame{
 //            Graphics2D graphics2D = image.createGraphics();
 //            panel.paint(graphics2D);
 
-			Container c= getContentPane();
-			BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
-			c.paint(image.getGraphics());
+			//			Container c= getContentPane();
+//			BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
+//			c.paint(image.getGraphics());
+			
+		    int w = panel.getWidth();
+		    int h = panel.getHeight();
+		    BufferedImage image = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+		    Graphics2D g = image.createGraphics();
+		    panel.paint(g);
 			ImageIO.write(image,"jpeg", new File("./artwork/image" + imageCounter + ".jpeg"));
             imageCounter++;
         }

@@ -98,13 +98,12 @@ class Xyz extends JFrame{
 	public void saveFile(){
 		try
         {
-//            BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
-//            Graphics2D graphics2D = image.createGraphics();
-//            panel.paint(graphics2D);
-
-			Container c= getContentPane();
-			BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
-			c.paint(image.getGraphics());
+            BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
+            Graphics2D graphics2D = image.createGraphics();
+            panel.paint(graphics2D);
+//			Container c= getContentPane();
+//			BufferedImage image = new BufferedImage(panel.getWidth(), panel.getHeight(), BufferedImage.TYPE_INT_ARGB);
+//			c.paint(image.getGraphics());
 			ImageIO.write(image,"jpeg", new File("./artwork/image" + imageCounter + ".jpeg"));
             imageCounter++;
         }
