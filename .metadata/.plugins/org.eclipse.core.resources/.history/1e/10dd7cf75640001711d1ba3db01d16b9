@@ -40,22 +40,20 @@ class Xyz extends JFrame{
 	int x;
 	int y;
 	Date time;
-	long endTime = new Date().getTime();
+	long startTime = new Date().getTime();
 	
 	public Xyz(){		
 		addMouseListener(new MouseAdapter(){
 			public void mousePressed(MouseEvent e){
+				time = new Date();
+				long clickTime = time.getTime() + 6000;
 				x = e.getX();
 				y = e.getY();
-				long clickTime = new Date().getTime();
-				if (((x > rx && y > ry)&&((x < (rx + width)) && (y < (ry + height)))) && (endTime > clickTime)){
+				if (((x > rx && y > ry)&&(x < (rx + width) && y < (ry + height))) && (startTime < clickTime)){
 					System.out.println("ON TIME!");
-					System.out.println("=============================================================");
-				}else if (!((x > rx && y > ry)&&((x < (rx + width)) && (y < (ry + height))))){
-					System.out.println("You missed the whole box! \n=============================================================");
-				} else if (endTime < clickTime){
-					System.out.println("You were way to slow! \n=============================================================");
-				} 
+					System.out.println(startTime);
+					System.out.println(clickTime);
+				}
 				Graphics rect = getGraphics();
 				rectagleDrawer(rect);
 			}
@@ -90,7 +88,8 @@ class Xyz extends JFrame{
 		height = ((int)(Math.random() * 40)) + 10;
 		width = ((int)(Math.random() * 40)) + 10;
 		g.fillRect(rx,ry, width, height);
-		endTime = new Date().getTime() + 5000;
+		time = new Date();
+		startTime = time.getTime();
 //		g.drawRect(((int)Math.random() * 300),((int)Math.random() * 300) , ((int)Math.random() * 50), ((int)Math.random() * 50));
 	}
 	

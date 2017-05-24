@@ -51,11 +51,7 @@ class Xyz extends JFrame{
 				if (((x > rx && y > ry)&&((x < (rx + width)) && (y < (ry + height)))) && (endTime > clickTime)){
 					System.out.println("ON TIME!");
 					System.out.println("=============================================================");
-				}else if (!((x > rx && y > ry)&&((x < (rx + width)) && (y < (ry + height))))){
-					System.out.println("You missed the whole box! \n=============================================================");
-				} else if (endTime < clickTime){
-					System.out.println("You were way to slow! \n=============================================================");
-				} 
+				}
 				Graphics rect = getGraphics();
 				rectagleDrawer(rect);
 			}
