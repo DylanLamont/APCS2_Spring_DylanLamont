@@ -1,0 +1,137 @@
+//package newSwingDemoPackage;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.*;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyAdapter;
+import java.util.Date;
+import java.util.*;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import javax.imageio.ImageIO;
+
+public class Demo {
+	public static void main (String[] args){
+		System.out.println("To play, run the prgram and click in the window created");
+		System.out.println("try to click inside the newest rectangle with in 3 seconds");
+		System.out.println("To save you artwork, press 's'");
+		System.out.println("To create beautiful artwork, press 'a'");
+		Xyz object = new Xyz();
+		//Time keeping system,  possible word games
+	}
+}
+
+class Xyz extends JFrame{
+
+	JPanel panel = new JPanel();
+	JTextArea text = new JTextArea(1,15);
+	int rx = 0;
+	int ry = 0;
+	int width = 0;
+	int height = 0;
+	int x;
+	int y;
+	Date time;
+	long endTime = new Date().getTime();
+	int imageCounter = 0;
+	int streakHit = 0;
+	
+	public Xyz(){
+		setSize(400,400);
+		addMouseListener(new MouseAdapter(){
+			
+			public void mousePressed(MouseEvent e){
+				x = e.getX();
+				y = e.getY();
+				long clickTime = new Date().getTime();
+				if (((x > rx && y > ry)&&((x < (rx + width)) && (y < (ry + height)))) && (endTime > clickTime)){
+					streakHit++;
+					System.out.println("\n ON TIME!\n Your streak is " + streakHit + "\n =============================================================");
+				}else if (!((x > rx && y > ry)&&((x < (rx + width)) && (y < (ry + height))))){
+					streakHit = 0;
+					System.out.println("\nYou missed the whole box! \n Your streak is " + streakHit + "\n=============================================================");
+				} else if (endTime < clickTime){
+					System.out.println("\nYou were way to slow! \n Your streak is " + streakHit + " \n=============================================================");
+				} 
+				Graphics rect = getGraphics();
+				rectagleDrawer(rect);
+			}
+		});
+		addKeyListener( new KeyAdapter(){
+			public void keyPressed(KeyEvent e){
+				if (e.getKeyChar() == 's'){
+					saveFile();
+				}
+				else if (e.getKeyChar() == 'a'){
+					for( int i = 300; i > 0; i--){
+						Graphics rect = getGraphics();
+						artFunction(rect);
+					}
+				}
+				else if (e.getKeyChar() == 't'){
+					System.out.println(new Date().getTime());
+				}
+			}
+		});
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		panel.add(text);
+	}
+	
+	public void rectagleDrawer(Graphics g){
+		g.setColor(new Color(((int)(Math.random()*256)),((int)(Math.random()*256)),((int)(Math.random()*256))));
+		rx = ((int)(Math.random() * 350));
+		ry = ((int)(Math.random() * 350));
+		height = ((int)(Math.random() * 40)) + 10;
+		width = ((int)(Math.random() * 40)) + 10;
+		g.fillRect(rx,ry, width, height);
+		endTime = new Date().getTime() + 5000;
+//		g.drawRect(((int)Math.random() * 300),((int)Math.random() * 300) , ((int)Math.random() * 50), ((int)Math.random() * 50));
+	}
+	
+	public void saveFile(){
+		try
+        {
+//            BufferedImage image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_RGB);
+//            Graphics2D graphics2D = image.createGraphics();
+//            panel.paint(graphics2D);
+
+//			Container c= getContentPane();
+//			BufferedImage image = new BufferedImage(getWidth(),getWidth(), BufferedImage.TYPE_INT_ARGB);
+//			c.paint(image.getGraphics());
+			
+//		    int w = panel.getWidth();
+//		    int h = panel.getHeight();
+//		    BufferedImage image = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB);
+//		    Graphics2D g = image.createGraphics();
+//		    panel.paint(g);
+
+			Robot robot = new Robot();
+			BufferedImage image = robot.createScreenCapture(new Rectangle(400,400));
+			ImageIO.write(image,"jpeg", new File("./artwork/image" + imageCounter + ".jpeg"));
+            imageCounter++;
+        }
+        catch(Exception exception)
+        {
+            System.out.println("\n-\n-\n-Something went wrong!\n-\n-");
+        }
+		
+	}
+	public void artFunction(Graphics g){
+		g.setColor(new Color(((int)(Math.random()*256)),((int)(Math.random()*256)),((int)(Math.random()*256))));
+		rx = ((int)(Math.random() * 360));
+		ry = ((int)(Math.random() * 360));
+		height = ((int)(Math.random() * 30)) + 10;
+		width = ((int)(Math.random() * 30)) + 10;
+		g.fillRect(rx,ry, width, height);
+	}
+}
